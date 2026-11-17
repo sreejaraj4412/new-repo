@@ -16,7 +16,7 @@ services:
 
   backend:
     image: sreeja9090/docker-backend-2400032500:latest
-    container_name: hackathon-backend
+    container_name: hackathon
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgresdb:5432/curd_2400032500
       SPRING_DATASOURCE_USERNAME: postgres
@@ -25,17 +25,6 @@ services:
       - "8081:8081"
     depends_on:
       - postgresdb
-    restart: on-failure
-    networks:
-      - springboot-postgres-net
-
-  frontend:
-    image: sreeja9090/docker-frontend-2400032500:latest
-    container_name: hackathon-frontend
-    ports:
-      - "5176:80"
-    depends_on:
-      - backend
     restart: on-failure
     networks:
       - springboot-postgres-net

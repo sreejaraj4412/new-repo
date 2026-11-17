@@ -35,10 +35,3 @@ jobs:
           push: ${{ github.event_name == 'push' }}
           tags: sreeja9090/docker-backend-2400032500:latest
 
-      - name: Build frontend image
-        uses: docker/build-push-action@v6
-        with:
-          context: ./frontend
-          file: ./frontend/Dockerfile
-          push: ${{ github.event_name == 'push' }}
-          tags: sreeja9090/docker-frontend-2400032500:latest
